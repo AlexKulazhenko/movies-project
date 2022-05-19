@@ -14,14 +14,14 @@ import { Search } from "../components/Search"
 
     
     componentDidMount(){
-        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=matrix`)
+        fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=matrix`)
          .then(response => response.json())
          .then(data => this.setState({movies: data.Search}))
     }
 
     searchMovies = (str, type = 'all') => {
         this.setState({ loading: true });
-        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${str}${type !=='all' ? `&type=${type}` : ''}`)
+        fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${str}${type !=='all' ? `&type=${type}` : ''}`)
          .then(response => response.json())
          .then(data => {
             if (data?.Response === 'True') {
