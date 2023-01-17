@@ -40,9 +40,6 @@ import { Search } from "../components/Search"
          .finally(() => { setLoading(false) })
     }
 
-
- 
-        // const { loading, movies} = this.state;
         return(
             <main className="content container">  
             <Search searchMovies = {searchMovies}/>    
